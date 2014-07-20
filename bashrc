@@ -1,6 +1,6 @@
 # Terminal
 export HISTSIZE=''
-alias stats='history | awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' | sort -rn | head -20'
+alias hstats='history | awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' | sort -rn | head -20'
 
 export CLICOLOR=1
 export LSCOLORS=fxgxcxdxbxegedabagacad
@@ -10,8 +10,7 @@ export PS1='\[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h \[\033[01;34m\]\W \
 #
 # Editor
 #
-export EDITOR='mvim'
-
+export EDITOR='vim'
 alias v=mvim
 
 #
@@ -37,7 +36,7 @@ alias r=rails
 alias rn='rails new --skip-active-record --skip-sprockets --skip-spring --skip-javascript --skip-test-unit --skip-bundle'
 
 alias be='bundle exec'
-alias bo='bundle open'
+alias bo='EDITOR=mvim bundle open'
 
 alias s=rspec
 
