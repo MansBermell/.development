@@ -26,13 +26,15 @@ alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
-alias gs='git status'
 alias gd='git diff'
 alias gg='git grep'
 alias gl='git log'
-alias glo='git lo'
 alias glf='git ls'
 alias glg='git lg'
+alias glo='git lo'
+alias gp='git push'
+alias gpl='git pull'
+alias gs='git status'
 
 # Programming
 alias r=rails
