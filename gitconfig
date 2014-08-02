@@ -28,10 +28,12 @@
 
 [alias]
 	a = add
+	ap = add --patch
 	b = branch
 	c = commit
 	co = checkout
 	d = diff
+	ds = diff --staged
 	g = grep
 	l = log
 	lf = log --pretty=format:'%Cred%h%C(yellow)%d %Creset%s %C(bold blue)<%an>' --decorate --numstat

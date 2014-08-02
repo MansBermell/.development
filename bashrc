@@ -12,24 +12,26 @@ alias hstats='history | awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' 
 export PS1='\[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h \[\033[01;34m\]\W \$\[\033[00m\] '
 
 # Editor
+export EDITOR=vim
+
 if hash gvim 2>/dev/null; then
-  export EDITOR=gvim
   alias v=gvim
 else
-  export EDITOR=vim
   alias v=vim
 fi
 
 # Git
 alias g=git
 alias ga='git add'
+alias gap='git add --patch'
 alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gg='git grep'
 alias gl='git log'
-alias glf='git ls'
+alias glf='git lf'
 alias glg='git lg'
 alias glo='git lo'
 alias gp='git push'
@@ -42,6 +44,7 @@ alias rn='rails new --skip-active-record --skip-sprockets --skip-spring --skip-j
 
 alias b=bundle
 alias be='bundle exec'
+alias beg='bundle exec guard'
 alias bo='bundle open'
 
 alias s=rspec
