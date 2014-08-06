@@ -11,14 +11,11 @@ alias hstats='history | awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' 
 
 export PS1='\[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h \[\033[01;34m\]\W \$\[\033[00m\] '
 
+stty -ixon
+
 # Editor
 export EDITOR=vim
-
-if hash gvim 2>/dev/null; then
-  alias v=gvim
-else
-  alias v=vim
-fi
+alias v=vim
 
 # Git
 alias g=git
