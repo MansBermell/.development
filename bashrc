@@ -1,6 +1,4 @@
 # Terminal
-[[ -n "$DISPLAY" && "$TERM" = "xterm" ]] && export TERM=xterm-256color
-
 export CLICOLOR=1
 export LSCOLORS=fxgxcxdxbxegedabagacad
 
