@@ -15,12 +15,7 @@ stty -ixon
 
 # Editor
 export EDITOR=vim
-
-if hash gvim 2>/dev/null; then
-  alias v=gvim
-else
-  alias v=vim
-fi
+alias v=vim
 
 # Git
 alias g=git
