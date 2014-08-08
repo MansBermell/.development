@@ -29,7 +29,9 @@ function inline() {
 stty -ixon
 
 if is linux; then
-  export LS_COLORS='di=35;40:ln=36;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+  export LS_COLORS=$(echo '
+    di=35;40: ln=36;40: so=32;40: pi=33;40: ex=31;40: bd=34;46:
+    cd=34;43: su= 0;41: sg= 0;46: tw= 0;42: ow=0;43:' | tr -d '\n ')
   alias ls='ls --color=auto'
 else
   export CLICOLOR=1
@@ -101,8 +103,11 @@ if has git; then
 fi
 
 if has git && has brew; then
-  source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh 2> /dev/null
-  source $(brew --prefix)/etc/bash_completion.d/git-completion.bash 2> /dev/null
+  file=$(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+  [ -f "$file" ] && source "$file"
+
+  file=$(brew --prefix)/etc/bash_completion.d/git-completion.bash
+  [ -f "$file" ] && source "$file"
 fi
 
 if has __git_ps1; then
