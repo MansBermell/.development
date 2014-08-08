@@ -39,9 +39,9 @@ fi
 
 alias grep='grep --color=auto'
 
-export PS1=$(inline\
-  '\[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h'\
-  '\[\033[01;34m\]\W \$\[\033[00m\] ')
+export PS1=$(inline '
+  \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
+  \[\033[01;34m\]\W \$\[\033[00m\] ')
 
 export HISTSIZE=''
 alias hstats=$(inline '
@@ -95,22 +95,21 @@ fi
 # ------------------------------------------------------------------------------
 
 if has git; then
-  alias g=git
-  alias ga='git add'
-  alias gap='git add --patch'
-  alias gb='git branch'
-  alias gc='git commit'
-  alias gco='git checkout'
-  alias gd='git diff'
-  alias gds='git diff --staged'
-  alias gg='git grep'
-  alias gl='git log'
-  alias glf='git lf'
-  alias glg='git lg'
-  alias glo='git lo'
-  alias gp='git push'
-  alias gpl='git pull'
-  alias gs='git status'
+  for command in '' a ap b c co d ds g l lf lg lo p pl s; do
+    alias "g$command"="git $command"
+  done
+fi
+
+if has git && has brew; then
+  source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh 2> /dev/null
+  source $(brew --prefix)/etc/bash_completion.d/git-completion.bash 2> /dev/null
+fi
+
+if has __git_ps1; then
+  export PS1=$(inline '
+    \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
+    \[\033[01;34m\]\W$(__git_ps1 " [\[\033[01;36m\]%s\[\033[01;34m\]]")
+    \$\[\033[00m\] ')
 fi
 
 # ------------------------------------------------------------------------------
