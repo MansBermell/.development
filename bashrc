@@ -62,31 +62,10 @@ if is darwin && has gvim; then
 fi
 
 # ------------------------------------------------------------------------------
-# Source code management
-# ------------------------------------------------------------------------------
-
-if has git; then
-  alias g=git
-  alias ga='git add'
-  alias gap='git add --patch'
-  alias gb='git branch'
-  alias gc='git commit'
-  alias gco='git checkout'
-  alias gd='git diff'
-  alias gds='git diff --staged'
-  alias gg='git grep'
-  alias gl='git log'
-  alias glf='git lf'
-  alias glg='git lg'
-  alias glo='git lo'
-  alias gp='git push'
-  alias gpl='git pull'
-  alias gs='git status'
-fi
-
-# ------------------------------------------------------------------------------
 # Programming
 # ------------------------------------------------------------------------------
+
+if has rbenv; then eval "$(rbenv init -)"; fi
 
 if has rails; then
   alias r=rails
@@ -109,6 +88,29 @@ fi
 
 if has rspec; then
   alias s=rspec
+fi
+
+# ------------------------------------------------------------------------------
+# Source code management
+# ------------------------------------------------------------------------------
+
+if has git; then
+  alias g=git
+  alias ga='git add'
+  alias gap='git add --patch'
+  alias gb='git branch'
+  alias gc='git commit'
+  alias gco='git checkout'
+  alias gd='git diff'
+  alias gds='git diff --staged'
+  alias gg='git grep'
+  alias gl='git log'
+  alias glf='git lf'
+  alias glg='git lg'
+  alias glo='git lo'
+  alias gp='git push'
+  alias gpl='git pull'
+  alias gs='git status'
 fi
 
 # ------------------------------------------------------------------------------
