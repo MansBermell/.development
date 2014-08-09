@@ -122,5 +122,5 @@ fi
 # ------------------------------------------------------------------------------
 
 alias cleanup=$(inline '
-  find . \( -name "*.swp" -o -name ".DS_Store" \) |
-  xargs rm')
+  find . \( -name "*.swp" -o -name ".DS_Store" \) -print0 |
+  xargs -0 rm')
