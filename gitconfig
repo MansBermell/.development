@@ -31,6 +31,7 @@
 	ap = add --patch
 	b = branch
 	c = commit
+	ca = commit --amend
 	cf = config
 	cl = config --list
 	co = checkout
