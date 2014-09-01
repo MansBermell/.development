@@ -95,7 +95,13 @@ if has rspec; then
 fi
 
 if has go; then
+  alias gob='go test -bench .'
+  alias gof='go fmt .'
   alias got='go test'
+  alias goc=$(inline '
+    go test -coverprofile cover.out &&
+    go tool cover -html=cover.out -o cover.html &&
+    open cover.html')
 fi
 
 # ------------------------------------------------------------------------------
