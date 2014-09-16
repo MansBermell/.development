@@ -54,6 +54,9 @@ alias hstats=$(inline '
   LC_ALL=C sort -rn |
   head -20')
 
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
 # ------------------------------------------------------------------------------
 # Editor
 # ------------------------------------------------------------------------------
