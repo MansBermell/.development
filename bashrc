@@ -107,6 +107,11 @@ if has go; then
     open cover.html')
 fi
 
+if has cargo; then
+  alias cob='cargo bench'
+  alias cot='cargo test'
+fi
+
 # ------------------------------------------------------------------------------
 # Source code management
 # ------------------------------------------------------------------------------
