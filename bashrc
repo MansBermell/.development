@@ -29,7 +29,7 @@ function inline() {
 if is linux; then
   export LS_COLORS=$(echo '
     di=35;40: ln=36;40: so=32;40: pi=33;40: ex=31;40: bd=34;46:
-    cd=34;43: su= 0;41: sg= 0;46: tw= 0;42: ow=0;43:' | tr -d '\n ')
+    cd=34;43: su= 0;41: sg= 0;46: tw= 0;42: ow= 0;43:' | tr -d '\n ')
   alias ls='ls --color=auto'
   alias ll='ls --color=auto -l'
   alias la='ls --color=auto -la'
@@ -108,8 +108,8 @@ if has go; then
 fi
 
 if has cargo; then
-  alias cob='cargo bench'
-  alias cot='cargo test'
+  alias cob='RUST_TEST_TASKS=1 cargo bench'
+  alias cot='RUST_TEST_TASKS=1 cargo test'
 fi
 
 # ------------------------------------------------------------------------------
