@@ -110,6 +110,12 @@ fi
 if has cargo; then
   alias cob='RUST_TEST_TASKS=1 cargo bench'
   alias cot='RUST_TEST_TASKS=1 cargo test'
+  alias cor='cargo build --release'
+  alias cou=$(inline '
+    curl https://static.rust-lang.org/rustup.sh -O &&
+    chmod +x rustup.sh &&
+    ./rustup.sh --prefix=$(dirname $(dirname $(which rustc))) &&
+    rm ./rustup.sh')
 fi
 
 # ------------------------------------------------------------------------------
