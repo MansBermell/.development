@@ -69,57 +69,7 @@ if is darwin && has gvim; then
 fi
 
 # ------------------------------------------------------------------------------
-# Programming
-# ------------------------------------------------------------------------------
-
-if has rbenv; then eval "$(rbenv init -)"; fi
-
-if has rails; then
-  alias r=rails
-  alias rn=$(inline '
-    rails new
-      --skip-active-record
-      --skip-sprockets
-      --skip-spring
-      --skip-javascript
-      --skip-test-unit
-      --skip-bundle')
-fi
-
-if has bundle; then
-  alias b=bundle
-  alias be='bundle exec'
-  alias beg='bundle exec guard --clear'
-  alias bo='bundle open'
-fi
-
-if has rspec; then
-  alias s=rspec
-fi
-
-if has go; then
-  alias gob='go test -bench .'
-  alias gof='go fmt .'
-  alias got='go test'
-  alias goc=$(inline '
-    go test -coverprofile cover.out &&
-    go tool cover -html=cover.out -o cover.html &&
-    open cover.html')
-fi
-
-if has cargo; then
-  alias cob='RUST_TEST_TASKS=1 cargo bench'
-  alias cot='RUST_TEST_TASKS=1 cargo test'
-  alias cor='cargo build --release'
-  alias cou=$(inline '
-    curl https://static.rust-lang.org/rustup.sh -O &&
-    chmod +x rustup.sh &&
-    ./rustup.sh --prefix=$(dirname $(dirname $(which rustc))) &&
-    rm ./rustup.sh')
-fi
-
-# ------------------------------------------------------------------------------
-# Source code management
+# Version control
 # ------------------------------------------------------------------------------
 
 if has git; then
@@ -144,9 +94,65 @@ if has __git_ps1; then
 fi
 
 # ------------------------------------------------------------------------------
+# Programming
+# ------------------------------------------------------------------------------
+
+if has rbenv; then
+  eval "$(rbenv init -)"
+fi
+
+if has bundle; then
+  alias b=bundle
+  alias be='bundle exec'
+  alias bo='bundle open'
+fi
+
+if has bundle && has guard; then
+  alias beg='bundle exec guard --clear'
+fi
+
+if has rails; then
+  alias r=rails
+  alias rb=$(inline '
+    rails new
+      --skip-active-record
+      --skip-sprockets
+      --skip-spring
+      --skip-javascript
+      --skip-test-unit
+      --skip-bundle')
+fi
+
+if has rspec; then
+  alias s=rspec
+fi
+
+if has go; then
+  alias gob='go test -bench .'
+  alias gof='go fmt .'
+  alias got='go test'
+  alias goc=$(inline '
+    go test -coverprofile cover.out &&
+    go tool cover -html=cover.out -o cover.html &&
+    open cover.html')
+fi
+
+if has cargo; then
+  alias c=cargo
+  alias cob='RUST_TEST_TASKS=1 cargo bench'
+  alias cot='RUST_TEST_TASKS=1 cargo test'
+  alias cor='cargo build --release'
+  alias cou=$(inline '
+    curl https://static.rust-lang.org/rustup.sh -O &&
+    chmod +x rustup.sh &&
+    ./rustup.sh --prefix=$(dirname $(dirname $(which cargo))) &&
+    rm ./rustup.sh')
+fi
+
+# ------------------------------------------------------------------------------
 # Various
 # ------------------------------------------------------------------------------
 
-alias cup=$(inline '
+alias cleanup=$(inline '
   find . \( -name *.swo -o -name *.swp -o -name .DS_Store \) -print0 |
   xargs -0 rm')
