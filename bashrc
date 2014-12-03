@@ -97,10 +97,6 @@ fi
 # Programming
 # ------------------------------------------------------------------------------
 
-if has rbenv; then
-  eval "$(rbenv init -)"
-fi
-
 if has bundle; then
   alias b=bundle
   alias be='bundle exec'
