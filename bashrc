@@ -152,6 +152,10 @@ fi
 # Various
 # ------------------------------------------------------------------------------
 
+if is darwin; then
+  alias flushdns='sudo discoveryutil udnsflushcaches'
+fi
+
 alias cleanup=$(inline '
   find . \( -name *.swo -o -name *.swp -o -name .DS_Store \) -print0 |
   xargs -0 rm')
