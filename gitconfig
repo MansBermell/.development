@@ -45,6 +45,9 @@
 	p = push
 	pl = pull
 	s = status
+  si = submodule init
+  su = submodule update
+  se = submodule foreach
 
 [core]
 	excludesfile = ~/.world/gitignore
