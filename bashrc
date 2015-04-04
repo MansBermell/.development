@@ -148,7 +148,7 @@ if has cargo; then
   alias cou=$(inline '
     curl https://static.rust-lang.org/rustup.sh -O &&
     chmod +x rustup.sh &&
-    ./rustup.sh --prefix=$(dirname $(dirname $(which cargo))) &&
+    ./rustup.sh --channel=nightly --prefix=$(dirname $(dirname $(which cargo))) &&
     rm ./rustup.sh')
 fi
 
