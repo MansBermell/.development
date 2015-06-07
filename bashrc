@@ -26,6 +26,9 @@ function inline() {
 # Terminal
 # ------------------------------------------------------------------------------
 
+BASE16_SHELL="$HOME/.world/base16/base16-tomorrow.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 if is linux; then
   export LS_COLORS=$(echo '
     di=35;40: ln=36;40: so=32;40: pi=33;40: ex=31;40: bd=34;46:
