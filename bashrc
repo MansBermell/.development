@@ -58,7 +58,7 @@ alias hstats=$(inline '
   head -20')
 
 case "$TERM" in
-xterm*|rxvt*)
+rxvt*|screen*|xterm*)
   bind '"\e[A": history-search-backward'
   bind '"\e[B": history-search-forward'
   bind '"\e[1;5D": backward-word'
