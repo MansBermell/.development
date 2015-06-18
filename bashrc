@@ -103,6 +103,10 @@ fi
 # Programming
 # ------------------------------------------------------------------------------
 
+if has make; then
+  alias m=make
+fi
+
 if has bundle; then
   alias b=bundle
   alias be='bundle exec'
