@@ -145,10 +145,10 @@ fi
 
 if has cargo; then
   alias c=cargo
-  alias cob='RUST_TEST_TASKS=1 cargo bench'
+  alias cob='cargo bench'
   alias cod='cargo doc'
   alias cor='cargo build --release'
-  alias cot='RUST_TEST_TASKS=1 cargo test'
+  alias cot='cargo test'
   alias cou=$(inline '
     curl https://static.rust-lang.org/rustup.sh -O &&
     chmod +x rustup.sh &&
