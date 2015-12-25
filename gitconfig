@@ -50,4 +50,4 @@
 	se = submodule foreach
 
 [core]
-	excludesfile = ~/.world/gitignore
+	excludesfile = ~/.develop/gitignore
