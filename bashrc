@@ -133,10 +133,6 @@ if has rails; then
       --skip-bundle')
 fi
 
-if has rspec; then
-  alias s=rspec
-fi
-
 if has go; then
   alias gob='go test -bench .'
   alias gof='go fmt .'
@@ -158,6 +154,10 @@ if has cargo; then
     chmod +x rustup.sh &&
     ./rustup.sh --prefix=$(dirname $(dirname $(which cargo))) --channel=nightly --disable-sudo --yes  &&
     rm ./rustup.sh')
+fi
+
+if has rustfmt; then
+  alias rsf='rustfmt --write-mode=overwrite'
 fi
 
 # ------------------------------------------------------------------------------
