@@ -39,9 +39,6 @@
 	ds = diff --staged
 	g = grep --line-number
 	l = log
-	lf = log --pretty=format:'%Cred%h%C(yellow)%d %Creset%s %C(bold blue)<%an>' --decorate --numstat
-	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph
-	lo = log --oneline --decorate
 	p = push
 	pl = pull
 	s = status
