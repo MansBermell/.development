@@ -135,25 +135,27 @@ fi
 
 if has go; then
   alias gob='go test -bench .'
-  alias gof='go fmt .'
-  alias got='go test'
   alias goc=$(inline '
     go test -coverprofile cover.out &&
     go tool cover -html=cover.out -o cover.html &&
     open cover.html')
+  alias gof='go fmt .'
+  alias got='go test'
+fi
+
+if has rustc; then
+  alias rsu=$(inline '
+    curl https://static.rust-lang.org/rustup.sh -O &&
+    chmod +x rustup.sh &&
+    ./rustup.sh --prefix=$(dirname $(dirname $(which rustc))) --channel=nightly --disable-sudo --yes  &&
+    rm ./rustup.sh')
 fi
 
 if has cargo; then
   alias c=cargo
   alias cob='cargo bench'
-  alias cod='cargo doc'
-  alias cor='cargo build --release'
   alias cot='cargo test'
-  alias cou=$(inline '
-    curl https://static.rust-lang.org/rustup.sh -O &&
-    chmod +x rustup.sh &&
-    ./rustup.sh --prefix=$(dirname $(dirname $(which cargo))) --channel=nightly --disable-sudo --yes  &&
-    rm ./rustup.sh')
+  alias cou='cargo update'
 fi
 
 if has rustfmt; then
