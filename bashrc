@@ -72,6 +72,7 @@ fi
 # ------------------------------------------------------------------------------
 
 export EDITOR=vim
+export VISUAL=vim
 alias v=vim
 
 if is darwin && has gvim; then
