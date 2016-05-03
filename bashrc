@@ -176,7 +176,9 @@ fi
 # ------------------------------------------------------------------------------
 
 if is darwin; then
-  alias flushdns='sudo discoveryutil udnsflushcaches'
+  alias flushdns=$(inline '
+    sudo dscacheutil -flushcache &&
+    sudo killall -HUP mDNSResponder')
 fi
 
 alias cleanup=$(inline '
