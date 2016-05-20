@@ -154,6 +154,7 @@ fi
 
 if has cargo; then
   alias c=cargo
+  alias cgo='cargo go $(basename $PWD) repo'
   alias cob='cargo bench'
   alias cot='cargo test'
   alias cou='cargo update'
