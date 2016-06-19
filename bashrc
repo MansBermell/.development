@@ -47,7 +47,10 @@ export PS1=$(inline '
   \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
   \[\033[01;34m\]\W \$\[\033[00m\] ')
 
+export HISTFILESIZE=''
 export HISTSIZE=''
+shopt -s histappend
+
 alias hstats=$(inline '
   history |
   awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' |
