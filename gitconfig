@@ -43,6 +43,7 @@
 	pl = pull
 	s = status
 	sp = submodule foreach git pull
+	su = submodule update --init
 
 [core]
 	excludesfile = ~/.develop/gitignore
