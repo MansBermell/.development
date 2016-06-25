@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 
 function is() {
-  if [[ "$(echo $(uname) | tr '[:upper:]' '[:lower:]')" == "$1" ]]; then
+  if [[ "$(echo $(uname) | tr '[:upper:]' '[:lower:]')" == "${1}" ]]; then
     return 0
   else
     return 1
@@ -11,7 +11,7 @@ function is() {
 }
 
 function has() {
-  if hash "$1" 2> /dev/null; then
+  if hash "${1}" 2> /dev/null; then
     return 0
   else
     return 1
@@ -19,7 +19,7 @@ function has() {
 }
 
 function inline() {
-  echo "$1" | tr -d '\n' | sed -e 's/^ *//' -e 's/ \{2,\}/ /g'
+  echo "${1}" | tr -d '\n' | sed -e 's/^ *//' -e 's/ \{2,\}/ /g'
 }
 
 # ------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ alias hstats=$(inline '
   LC_ALL=C sort -rn |
   head -20')
 
-case "$TERM" in
+case "${TERM}" in
 rxvt*|screen*|xterm*)
   bind '"\e[A": history-search-backward'
   bind '"\e[B": history-search-forward'
@@ -88,16 +88,16 @@ fi
 
 if has git; then
   for command in '' a ap b c ca cf cl co d ds g l p pl s sp su; do
-    alias "g$command"="git $command"
+    alias "g${command}"="git ${command}"
   done
 fi
 
 if has git && has brew; then
   file=$(brew --prefix)/etc/bash_completion.d/git-prompt.sh
-  [ -f "$file" ] && source "$file"
+  [ -f "${file}" ] && source "${file}"
 
   file=$(brew --prefix)/etc/bash_completion.d/git-completion.bash
-  [ -f "$file" ] && source "$file"
+  [ -f "${file}" ] && source "${file}"
 fi
 
 if has __git_ps1; then
@@ -157,7 +157,7 @@ fi
 
 if has cargo; then
   alias c=cargo
-  alias cgo='cargo go $(basename $PWD) repo'
+  alias cgo='cargo go $(basename ${PWD}) repo'
   alias cob='cargo bench'
   alias cot='cargo test'
   alias cou='cargo update'
