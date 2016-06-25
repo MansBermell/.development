@@ -1,4 +1,4 @@
 ---
-:verbose: true
-:backtrace: true
-gem: "--no-ri --no-rdoc"
+gem: --no-ri --no-rdoc
+backtrace: true
+verbose: true
