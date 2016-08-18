@@ -117,28 +117,6 @@ if has make; then
   alias m=make
 fi
 
-if has bundle; then
-  alias b=bundle
-  alias be='bundle exec'
-  alias bo='bundle open'
-fi
-
-if has bundle && has guard; then
-  alias beg='bundle exec guard --clear'
-fi
-
-if has rails; then
-  alias r=rails
-  alias rb=$(inline '
-    rails new
-      --skip-active-record
-      --skip-sprockets
-      --skip-spring
-      --skip-javascript
-      --skip-test-unit
-      --skip-bundle')
-fi
-
 if has go; then
   alias gob='go test -bench .'
   alias goc=$(inline '
