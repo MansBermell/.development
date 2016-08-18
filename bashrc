@@ -158,6 +158,7 @@ fi
 
 if has docker; then
   alias d=docker
+  alias drmc='docker rm $(docker ps -aq)'
 fi
 
 if has open; then
