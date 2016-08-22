@@ -136,7 +136,7 @@ if has cargo; then
   alias cgo='cargo go $(basename ${PWD}) repo'
   alias cob='cargo bench'
   alias cod='cargo doc --open'
-  alias cot='cargo test'
+  alias cot='cargo test --jobs 1'
   alias cou='cargo update'
 fi
 
