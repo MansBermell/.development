@@ -42,6 +42,7 @@
 	p = push
 	pl = pull
 	s = status
+	sm = submodule foreach git checkout master
 	sp = submodule foreach git pull
 	su = submodule update --init
 
