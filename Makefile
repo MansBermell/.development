@@ -1,4 +1,4 @@
-root := "${HOME}/.develop"
+root := ${HOME}/.develop
 
 all:
 	@ln -Fis "${root}/gemrc" "${HOME}/.gemrc"
