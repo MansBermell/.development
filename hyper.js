@@ -5,7 +5,7 @@ module.exports = {
     cursorColor: 'rgba(95,216,251,0.6)',
     cursorShape: 'BLOCK',
     foregroundColor: '#c5c8c6',
-    backgroundColor: 'rgba(29,31,33,0.9)',
+    backgroundColor: 'rgb(29,31,33)',
     borderColor: '#333',
     css: '',
     termCSS: '',
