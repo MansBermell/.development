@@ -2,16 +2,8 @@ module.exports = {
   config: {
     fontSize: 14,
     fontFamily: 'Hack Regular, Monaco, Menlo, monospace',
+    foregroundColor: '#ccc',
     cursorColor: 'rgba(95,216,251,0.6)',
-    cursorShape: 'BLOCK',
-    foregroundColor: '#c5c8c6',
-    backgroundColor: 'rgb(29,31,33)',
-    borderColor: '#333',
-    css: '',
-    termCSS: '',
-    showHamburgerMenu: false,
-    showWindowControls: false,
-    padding: '12px 14px',
     colors: [
       '#1d1f21',
       '#cc6666',
@@ -29,14 +21,8 @@ module.exports = {
       '#b57880',
       '#8abeb7',
       '#ffffff',
-      '#c5c8c6'
+      '#c5c8c6',
     ],
-    shell: '',
-    shellArgs: ['--login'],
-    env: {},
     bell: false,
-    copyOnSelect: false
   },
-  plugins: [],
-  localPlugins: []
 };
