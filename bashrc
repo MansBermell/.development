@@ -126,9 +126,7 @@ if has go; then
 fi
 
 if has rustc; then
-  alias rsu=$(inline '
-    curl https://static.rust-lang.org/rustup.sh | sh -s --
-    --channel=nightly --disable-sudo --prefix=$(rustc --print sysroot) --yes')
+  alias rsu='curl https://sh.rustup.rs -sSf | sh'
 fi
 
 if has cargo; then
