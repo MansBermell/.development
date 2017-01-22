@@ -125,11 +125,8 @@ if has go; then
   alias got='go test'
 fi
 
-if has rustc; then
-  alias rsu=$(inline '
-    rustup self uninstall -y &&
-    curl https://sh.rustup.rs -sSf |
-    sh -s -- -y --no-modify-path --default-toolchain nightly')
+if has rustup; then
+  alias rsu='rustup update nightly'
 fi
 
 if has cargo; then
