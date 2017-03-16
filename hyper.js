@@ -6,7 +6,6 @@ module.exports = {
   ],
   config: {
     bell: false,
-    cursorBlink: true,
     fontFamily: 'Hack Regular, Monaco, Menlo, monospace',
     fontSize: 14,
     termCSS: `
