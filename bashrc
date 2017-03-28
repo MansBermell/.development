@@ -23,6 +23,24 @@ function inline() {
 }
 
 # ------------------------------------------------------------------------------
+# System
+# ------------------------------------------------------------------------------
+
+if has brew; then
+  alias bu='brew update && brew upgrade && brew cleanup'
+fi
+
+if has open; then
+  alias o=open
+fi
+
+if is darwin; then
+  alias flushdns=$(inline '
+    sudo dscacheutil -flushcache &&
+    sudo killall -HUP mDNSResponder')
+fi
+
+# ------------------------------------------------------------------------------
 # Terminal
 # ------------------------------------------------------------------------------
 
@@ -157,16 +175,6 @@ fi
 if has docker; then
   alias d=docker
   alias drmc='docker rm $(docker ps -aq)'
-fi
-
-if has open; then
-  alias o=open
-fi
-
-if is darwin; then
-  alias flushdns=$(inline '
-    sudo dscacheutil -flushcache &&
-    sudo killall -HUP mDNSResponder')
 fi
 
 alias cleanup=$(inline '
