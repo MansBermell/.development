@@ -126,10 +126,6 @@ fi
 
 if has go; then
   alias gob='go test -bench .'
-  alias goc=$(inline '
-    go test -coverprofile cover.out &&
-    go tool cover -html=cover.out -o cover.html &&
-    open cover.html')
   alias gof='go fmt .'
   alias got='go test'
 fi
@@ -140,11 +136,14 @@ fi
 
 if has cargo; then
   alias c=cargo
-  alias cgo='cargo go $(basename ${PWD}) repo'
   alias cob='cargo bench'
   alias cod='cargo doc --open'
   alias cot='cargo test --jobs 1'
   alias cou='cargo update'
+fi
+
+if has cargo-go; then
+  alias cgo='cargo go $(basename ${PWD}) repo'
 fi
 
 if has rustfmt; then
