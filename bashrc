@@ -60,7 +60,7 @@ export HISTFILESIZE=''
 export HISTSIZE=''
 shopt -s histappend
 
-alias hstats=$(inline '
+alias stats=$(inline '
   history |
   awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' |
   LC_ALL=C sort -rn |
