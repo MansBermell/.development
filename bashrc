@@ -169,5 +169,8 @@ if has docker; then
 fi
 
 alias cleanup=$(inline '
-  find . \( -name *.swo -o -name *.swp -o -name .DS_Store \) -print0 |
-  xargs -0 rm')
+  find . \(
+    -name *.swo -o
+    -name *.swp -o
+    -name .DS_Store
+  \) -delete')
