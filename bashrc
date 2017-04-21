@@ -34,12 +34,6 @@ if has open; then
   alias o=open
 fi
 
-if is darwin; then
-  alias flushdns=$(inline '
-    sudo dscacheutil -flushcache &&
-    sudo killall -HUP mDNSResponder')
-fi
-
 # ------------------------------------------------------------------------------
 # Terminal
 # ------------------------------------------------------------------------------
