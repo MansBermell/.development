@@ -44,14 +44,10 @@ if is linux; then
     di=35;40: ln=36;40: so=32;40: pi=33;40: ex=31;40: bd=34;46:
     cd=34;43: su= 0;41: sg= 0;46: tw= 0;42: ow= 0;43:' | tr -d '\n ')
   alias ls='ls --color=auto'
-  alias ll='ls --color=auto -l'
-  alias la='ls --color=auto -la'
 else
   export CLICOLOR=1
   export LSCOLORS=fxgxcxdxbxegedabagacad
   alias ls='ls -G'
-  alias ll='ls -G -l'
-  alias la='ls -G -la'
 fi
 
 alias grep='grep --color=auto'
