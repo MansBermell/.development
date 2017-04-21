@@ -135,19 +135,18 @@ if has rustup; then
 fi
 
 if has cargo; then
-  alias c=cargo
   alias cob='cargo bench'
   alias cod='cargo doc --open'
   alias cot='cargo test --jobs 1'
   alias cou='cargo update'
 fi
 
-if has cargo-go; then
-  alias cgo='cargo go $(basename ${PWD}) repo'
+if has cargo-fmt; then
+  alias cof='cargo fmt -- --write-mode=overwrite'
 fi
 
-if has rustfmt; then
-  alias rsf='rustfmt --write-mode=overwrite'
+if has cargo-go; then
+  alias cog='cargo go $(basename ${PWD}) repo'
 fi
 
 # ------------------------------------------------------------------------------
