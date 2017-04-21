@@ -166,7 +166,7 @@ if has docker; then
   alias drmc='docker rm $(docker ps -aq)'
 fi
 
-alias cleanup=$(inline '
+alias clean=$(inline '
   find . \(
     -name *.swo -o
     -name *.swp -o
