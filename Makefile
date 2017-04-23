@@ -1,11 +1,7 @@
-root := ${HOME}/.develop
-
 all:
-	@ln -Fis "${root}/gemrc" "${HOME}/.gemrc"
-	@ln -Fis "${root}/gitconfig" "${HOME}/.gitconfig"
-	@ln -Fis "${root}/inputrc" "${HOME}/.inputrc"
-	@ln -Fis "${root}/tmux.conf" "${HOME}/.tmux.conf"
-	@grep -q '\.develop/bashrc' "${HOME}/.bash_profile" 2> /dev/null || \
-		echo 'source "$${HOME}/.develop/bashrc"' >> "${HOME}/.bash_profile"
-
-.PHONY: all
+	@ln -Fis "${PWD}/gemrc" "${HOME}/.gemrc"
+	@ln -Fis "${PWD}/gitconfig" "${HOME}/.gitconfig"
+	@ln -Fis "${PWD}/inputrc" "${HOME}/.inputrc"
+	@ln -Fis "${PWD}/tmux.conf" "${HOME}/.tmux.conf"
+	@grep -q '/bashrc' "${HOME}/.bash_profile" 2> /dev/null || \
+		echo 'source "${PWD}/bashrc"' >> "${HOME}/.bash_profile"
