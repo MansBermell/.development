@@ -1,6 +1,6 @@
 # .develop
 
-Various files.
+The repository contains various configuration files. Best enjoyed responsibly.
 
 ## Installation
 
