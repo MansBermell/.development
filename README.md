@@ -1,9 +1,10 @@
-# .develop
+# .development
 
-The repository contains various configuration files. Best enjoyed responsibly.
+The repository contains various development-related files. Best enjoyed
+responsibly.
 
 ## Installation
 
 ```bash
-git clone https://github.com/IvanUkhov/.develop.git ~/.develop && make -C ~/.develop
+git clone https://github.com/IvanUkhov/.development.git ~/.development && make -C ~/.development
 ```
