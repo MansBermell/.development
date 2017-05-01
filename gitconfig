@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.develop/gitignore
+	excludesfile = ~/.development/gitignore
 
 [user]
 	name = Ivan Ukhov
