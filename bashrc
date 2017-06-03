@@ -154,11 +154,6 @@ fi
 # Various
 # ------------------------------------------------------------------------------
 
-if has docker; then
-  alias d=docker
-  alias drmc='docker rm $(docker ps -aq)'
-fi
-
 alias clean=$(inline '
   find . \(
     -name *.swo -o
