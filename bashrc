@@ -96,7 +96,8 @@ fi
 # ------------------------------------------------------------------------------
 
 if has git; then
-  for command in '' a ap b c ca cf cl co d ds g l p pl s sm sp su; do
+  alias g=git
+  for command in a ap b c ca cf cl co d ds g l p pl s sm sp su; do
     alias "g${command}"="git ${command}"
   done
 fi
