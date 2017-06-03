@@ -136,6 +136,7 @@ if has rustup; then
 fi
 
 if has cargo; then
+  alias c=cargo
   alias cob='cargo bench'
   alias cod='cargo doc --open'
   alias cot='cargo test --jobs 1'
