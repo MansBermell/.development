@@ -23,19 +23,6 @@ function inline() {
 }
 
 # ------------------------------------------------------------------------------
-# System
-# ------------------------------------------------------------------------------
-
-if has brew; then
-  alias bu='brew update && brew upgrade && brew cleanup'
-fi
-
-if has open; then
-  alias o=open
-  alias .='open .'
-fi
-
-# ------------------------------------------------------------------------------
 # Terminal
 # ------------------------------------------------------------------------------
 
@@ -155,9 +142,18 @@ fi
 # Various
 # ------------------------------------------------------------------------------
 
+if has brew; then
+  alias bu='brew update && brew upgrade && brew cleanup'
+fi
+
 alias clean=$(inline '
   find . \(
     -name *.swo -o
     -name *.swp -o
     -name .DS_Store
   \) -delete')
+
+if has open; then
+  alias o=open
+  alias .='open .'
+fi
