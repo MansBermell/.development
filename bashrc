@@ -139,8 +139,12 @@ if has cargo-go; then
 fi
 
 # ------------------------------------------------------------------------------
-# Various
+# Other
 # ------------------------------------------------------------------------------
+
+if has ag; then
+  alias agc='ag -A1 -B1'
+fi
 
 if has brew; then
   alias bu='brew update && brew upgrade && brew cleanup'
