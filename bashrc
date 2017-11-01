@@ -144,7 +144,7 @@ if has cargo; then
 fi
 
 if has cargo-fmt; then
-  alias cof='cargo fmt -- --write-mode=overwrite'
+  alias cof='cargo fmt'
 fi
 
 if has cargo-go; then
