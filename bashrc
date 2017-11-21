@@ -153,3 +153,7 @@ if has open; then
   alias o=open
   alias .='open .'
 fi
+
+if has docker; then
+  alias d=docker
+fi
