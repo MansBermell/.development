@@ -130,14 +130,6 @@ if has cargo; then
   alias cou='cargo update'
 fi
 
-if has cargo-fmt; then
-  alias cof='cargo fmt'
-fi
-
-if has cargo-go; then
-  alias cog='cargo go $(basename ${PWD}) repo'
-fi
-
 # ------------------------------------------------------------------------------
 # Other
 # ------------------------------------------------------------------------------
