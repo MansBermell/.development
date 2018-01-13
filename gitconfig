@@ -28,23 +28,3 @@
 
 [push]
 	default = simple
-
-[alias]
-	a = add
-	ap = add --patch
-	b = branch
-	c = commit
-	ca = commit --amend
-	cf = config
-	cl = config --list
-	co = checkout
-	d = diff
-	ds = diff --staged
-	g = grep --line-number
-	l = log
-	p = push
-	pl = pull
-	s = status
-	sm = submodule foreach git checkout master
-	sp = submodule foreach git pull
-	su = submodule update --init

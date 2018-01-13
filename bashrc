@@ -84,9 +84,22 @@ fi
 
 if has git; then
   alias g=git
-  for command in a ap b c ca cf cl co d ds g l p pl s sm sp su; do
-    alias "g${command}"="git ${command}"
-  done
+  alias ga=' git add'
+  alias gap='git add --patch'
+  alias gb=' git branch'
+  alias gc=' git commit'
+  alias gca='git commit --amend'
+  alias gcf='git config'
+  alias gcl='git config --list'
+  alias gco='git checkout'
+  alias gd=' git diff'
+  alias gds='git diff --staged'
+  alias gg=' git grep --line-number'
+  alias gl=' git log'
+  alias gp=' git push'
+  alias gpl='git pull'
+  alias gs=' git status'
+  alias gu=' git submodule update --init'
 fi
 
 if has git && has brew; then
