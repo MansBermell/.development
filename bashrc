@@ -84,22 +84,20 @@ fi
 
 if has git; then
   alias g=git
-  alias ga=' git add'
+  alias ga='git add'
   alias gap='git add --patch'
-  alias gb=' git branch'
-  alias gc=' git commit'
+  alias gb='git branch'
+  alias gc='git commit'
   alias gca='git commit --amend'
-  alias gcf='git config'
-  alias gcl='git config --list'
   alias gco='git checkout'
-  alias gd=' git diff'
+  alias gd='git diff'
   alias gds='git diff --staged'
-  alias gg=' git grep --line-number'
-  alias gl=' git log'
-  alias gp=' git push'
+  alias gg='git grep --line-number'
+  alias gi='git submodule update --init'
+  alias gl='git log'
+  alias gp='git push'
   alias gpl='git pull'
-  alias gs=' git status'
-  alias gu=' git submodule update --init'
+  alias gs='git status'
 fi
 
 if has git && has brew; then
