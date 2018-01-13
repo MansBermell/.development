@@ -15,5 +15,5 @@
 	default = simple
 
 [filter "ipynb"]
-	clean = ~/.development/bin/ipynb_filter.py
+	clean = ~/.development/bin/filter_ipynb.py
 	smudge = cat
