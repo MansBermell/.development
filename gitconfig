@@ -1,4 +1,5 @@
 [core]
+	attributesfile = ~/.development/gitattributes
 	excludesfile = ~/.development/gitignore
 
 [user]
@@ -12,3 +13,7 @@
 
 [push]
 	default = simple
+
+[filter "ipynb"]
+	clean = ~/.development/bin/ipynb_filter.py
+	smudge = cat
