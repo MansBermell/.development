@@ -39,6 +39,7 @@ sheet_commands = [
 
 cell_commands = [
     Command(['execution_count'], Assign(None)),
+    Command(['metadata'], Assign({})),
     Command(['outputs'], Assign([])),
 ]
 
