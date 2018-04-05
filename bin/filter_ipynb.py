@@ -16,9 +16,11 @@ class Assign:
     def __call__(self, object, key):
         object[key] = self.value
 
+
 class Delete:
     def __call__(self, object, key):
         del object[key]
+
 
 class Command:
     def __init__(self, path, action):
@@ -33,24 +35,29 @@ class Command:
             object, path = object[path[0]], path[1:]
         self.action(object, path[0])
 
-sheet_commands = [
-    Command(['metadata', 'language_info', 'version'], Delete()),
+
+SHEET_COMMANDS = [
+    Command(['metadata', 'language_info'], Delete()),
 ]
 
-cell_commands = [
+CELL_COMMANDS = [
     Command(['execution_count'], Assign(None)),
     Command(['metadata'], Assign({})),
     Command(['outputs'], Assign([])),
 ]
 
-def clean(sheet):
-    for command in sheet_commands: command(sheet)
-    for cell in sheet.cells:
-        for command in cell_commands: command(cell)
 
-content = sys.stdin.read()
-version = json.loads(content)['nbformat']
-content = reads(content, version)
-clean(content)
+def run():
+    content = sys.stdin.read()
+    version = json.loads(content)['nbformat']
+    content = reads(content, version)
+    for command in SHEET_COMMANDS:
+        command(content)
+    for cell in content.cells:
+        for command in CELL_COMMANDS:
+            command(cell)
+    write(content, sys.stdout, version)
 
-write(content, sys.stdout, version)
+
+if __name__ == '__main__':
+    run()
