@@ -26,6 +26,13 @@ function inline() {
 # Terminal
 # ------------------------------------------------------------------------------
 
+
+if is darwin || is linux; then
+  export PS1=$(inline '
+    \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
+    \[\033[01;34m\]\W \$\[\033[00m\] ')
+fi
+
 if is linux; then
   export LS_COLORS=$(echo '
     di=35;40: ln=36;40: so=32;40: pi=33;40: ex=31;40: bd=34;46:
@@ -40,10 +47,6 @@ if is darwin; then
 fi
 
 alias grep='grep --color=auto'
-
-export PS1=$(inline '
-  \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
-  \[\033[01;34m\]\W \$\[\033[00m\] ')
 
 export HISTFILESIZE=''
 export HISTSIZE=''
@@ -110,7 +113,7 @@ if has git && has brew; then
   [ -f "${file}" ] && source "${file}"
 fi
 
-if has __git_ps1; then
+if (is darwin || is linux) && has __git_ps1; then
   export PS1=$(inline '
     \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
     \[\033[01;34m\]\W$(__git_ps1 " [\[\033[01;36m\]%s\[\033[01;34m\]]")
