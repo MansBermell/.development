@@ -124,8 +124,12 @@ fi
 # Programming
 # ------------------------------------------------------------------------------
 
-if has make; then
-  alias m=make
+if has cargo; then
+  alias c=cargo
+  alias cob='cargo bench'
+  alias cod='cargo doc --open'
+  alias cot='cargo test --jobs 1'
+  alias cou='cargo update'
 fi
 
 if has go; then
@@ -134,16 +138,16 @@ if has go; then
   alias got='go test'
 fi
 
+if has make; then
+  alias m=make
+fi
+
 if has rustup; then
   alias rsu='rustup update nightly'
 fi
 
-if has cargo; then
-  alias c=cargo
-  alias cob='cargo bench'
-  alias cod='cargo doc --open'
-  alias cot='cargo test --jobs 1'
-  alias cou='cargo update'
+if has yapf; then
+  alias pyf='yapf --style=google --in-place --recursive'
 fi
 
 # ------------------------------------------------------------------------------
