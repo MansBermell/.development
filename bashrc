@@ -117,6 +117,10 @@ fi
 # Programming
 # ------------------------------------------------------------------------------
 
+if has ag; then
+  alias agc='ag -A1 -B1'
+fi
+
 if has cargo; then
   alias c=cargo
   alias cob='cargo bench'
@@ -150,10 +154,6 @@ fi
 # ------------------------------------------------------------------------------
 # Other
 # ------------------------------------------------------------------------------
-
-if has ag; then
-  alias agc='ag -A1 -B1'
-fi
 
 if has brew; then
   alias bu='brew update && brew upgrade && brew cleanup'
