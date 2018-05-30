@@ -23,6 +23,19 @@ function inline() {
 }
 
 # ------------------------------------------------------------------------------
+# System
+# ------------------------------------------------------------------------------
+
+if has brew; then
+  alias bu='brew update && brew upgrade && brew cleanup'
+fi
+
+if has open; then
+  alias o=open
+  alias .='open .'
+fi
+
+# ------------------------------------------------------------------------------
 # Terminal
 # ------------------------------------------------------------------------------
 
@@ -149,17 +162,4 @@ fi
 
 if has yapf; then
   alias pyf='yapf --style=google --in-place --recursive'
-fi
-
-# ------------------------------------------------------------------------------
-# Other
-# ------------------------------------------------------------------------------
-
-if has brew; then
-  alias bu='brew update && brew upgrade && brew cleanup'
-fi
-
-if has open; then
-  alias o=open
-  alias .='open .'
 fi
