@@ -125,6 +125,10 @@ if has cargo; then
   alias cou='cargo update'
 fi
 
+if has docker; then
+  alias d=docker
+fi
+
 if has go; then
   alias gob='go test -bench .'
   alias gof='go fmt .'
@@ -165,8 +169,4 @@ alias clean=$(inline '
 if has open; then
   alias o=open
   alias .='open .'
-fi
-
-if has docker; then
-  alias d=docker
 fi
