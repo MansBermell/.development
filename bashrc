@@ -51,12 +51,6 @@ export HISTFILESIZE=''
 export HISTSIZE=''
 shopt -s histappend
 
-alias stats=$(inline '
-  history |
-  awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' |
-  LC_ALL=C sort -rn |
-  head -20')
-
 case "${TERM}" in
 rxvt*|screen*|xterm*)
   bind '"\e[A": history-search-backward'
