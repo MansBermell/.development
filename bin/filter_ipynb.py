@@ -10,6 +10,7 @@ from nbformat import reads, write
 
 
 class Assign:
+
     def __init__(self, value):
         self.value = value
 
@@ -18,11 +19,13 @@ class Assign:
 
 
 class Delete:
+
     def __call__(self, object, key):
         del object[key]
 
 
 class Command:
+
     def __init__(self, path, action):
         self.path = path
         self.action = action
