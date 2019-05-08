@@ -1,6 +1,8 @@
-*.o
+*.egg-info
 *.swo
 *.swp
 *~
 .DS_Store
+.pytest_cache
 __pycache__
+.ipynb_checkpoints
