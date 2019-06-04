@@ -2,7 +2,7 @@
 # Helpers
 # ------------------------------------------------------------------------------
 
-function is() {
+function is {
   if [[ "$(echo $(uname) | tr '[:upper:]' '[:lower:]')" == "${1}" ]]; then
     return 0
   else
@@ -10,16 +10,12 @@ function is() {
   fi
 }
 
-function has() {
+function has {
   if hash "${1}" 2> /dev/null; then
     return 0
   else
     return 1
   fi
-}
-
-function inline() {
-  echo "${1}" | tr -d '\n' | sed -e 's/^ *//' -e 's/ \{2,\}/ /g'
 }
 
 # ------------------------------------------------------------------------------
@@ -39,10 +35,27 @@ fi
 # Terminal
 # ------------------------------------------------------------------------------
 
-if is darwin || is linux; then
-  export PS1=$(inline '
-    \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
-    \[\033[01;34m\]\W \$\[\033[00m\] ')
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
+zstyle :completion::complete:-command-:: tag-order local-directories -
+
+setopt prompt_subst
+PROMPT='%{%F{green}%}%n%{%F{yellow}%}@%{%F{cyan}%}%m %{%F{blue}%}%c$(git_prompt) $%{%F{none}%} '
+
+if has tmux; then
+  alias t='tmux attach || tmux new'
 fi
 
 if is linux; then
@@ -57,23 +70,6 @@ if is darwin; then
 fi
 
 alias grep='grep --color=auto'
-
-export HISTFILESIZE=''
-export HISTSIZE=''
-shopt -s histappend
-
-case "${TERM}" in
-rxvt*|screen*|xterm*)
-  bind '"\e[A": history-search-backward'
-  bind '"\e[B": history-search-forward'
-  bind '"\e[1;5D": backward-word'
-  bind '"\e[1;5C": forward-word'
-  ;;
-esac
-
-if has tmux; then
-  alias t='tmux attach || tmux new'
-fi
 
 # ------------------------------------------------------------------------------
 # Editor
@@ -91,6 +87,15 @@ fi
 # Version control
 # ------------------------------------------------------------------------------
 
+function git_prompt {
+  if has git; then
+    branch=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)
+    if [ ! -z "${branch}" ]; then
+      echo " [${branch}]"
+    fi
+  fi
+}
+
 if has git; then
   alias g=git
   alias ga='git add'
@@ -107,21 +112,6 @@ if has git; then
   alias gp='git push'
   alias gpl='git pull'
   alias gs='git status'
-fi
-
-if has git && has brew; then
-  file=$(brew --prefix)/etc/bash_completion.d/git-prompt.sh
-  [ -f "${file}" ] && source "${file}"
-
-  file=$(brew --prefix)/etc/bash_completion.d/git-completion.bash
-  [ -f "${file}" ] && source "${file}"
-fi
-
-if (is darwin || is linux) && has __git_ps1; then
-  export PS1=$(inline '
-    \[\033[0;32m\]\u\[\033[0;33m\]@\[\033[01;36m\]\h
-    \[\033[01;34m\]\W$(__git_ps1 " [\[\033[01;36m\]%s\[\033[01;34m\]]")
-    \$\[\033[00m\] ')
 fi
 
 # ------------------------------------------------------------------------------
