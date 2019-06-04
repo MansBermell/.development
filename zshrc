@@ -135,12 +135,6 @@ if has docker; then
   alias d=docker
 fi
 
-if has go; then
-  alias gob='go test -bench .'
-  alias gof='go fmt .'
-  alias got='go test'
-fi
-
 if has make; then
   alias m=make
 fi
