@@ -77,10 +77,11 @@ alias grep='grep --color=auto'
 
 export EDITOR=vim
 export VISUAL=vim
-alias v=vim
 
 if is darwin && has mvim; then
   alias v=mvim
+else
+  alias v=vim
 fi
 
 # ------------------------------------------------------------------------------
