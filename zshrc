@@ -46,6 +46,8 @@ SAVEHIST=5000
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
+bindkey "[C" forward-word
+bindkey "[D" backward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
