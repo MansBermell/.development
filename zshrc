@@ -57,7 +57,7 @@ else
 fi
 
 # ------------------------------------------------------------------------------
-# Version control
+# Versioning
 # ------------------------------------------------------------------------------
 
 function git_prompt {
@@ -80,7 +80,6 @@ if has git; then
   alias gd='git diff'
   alias gds='git diff --staged'
   alias gg='git grep --line-number'
-  alias gi='git submodule update --init'
   alias gl='git log'
   alias gp='git push'
   alias gpl='git pull'
