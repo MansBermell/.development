@@ -18,6 +18,8 @@ function has {
 # Terminal
 # ------------------------------------------------------------------------------
 
+TERM=xterm-256color
+
 setopt prompt_subst
 PROMPT='%{%F{green}%}%n%{%F{yellow}%}@%{%F{cyan}%}%m %{%F{blue}%}%c$(git_prompt) $%{%F{none}%} '
 
