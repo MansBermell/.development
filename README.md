@@ -9,7 +9,7 @@ responsibly.
 git clone https://github.com/IvanUkhov/.development.git ~/.development && make -C ~/.development
 ```
 
-### Git: Commit signing
+### Git: Signing commits
 
 Generate a key and upload to GitHub:
 
