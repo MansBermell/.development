@@ -34,3 +34,9 @@ killall gpg-agent
 git config --global gpgsign true
 git config --global user.signingkey KEY
 ```
+
+### Jupyter: Cleaning notebooks
+
+```sh
+echo '*.ipynb filter=ipynb' >> ~/.development/gitattributes
+```
