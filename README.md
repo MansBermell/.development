@@ -31,7 +31,8 @@ echo "use-agent\nbatch" >> ~/.gnupg/gpg.conf
 echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
 killall gpg-agent
 
-git config --global gpgsign true
+gpg --list-secret-keys --keyid-format LONG
+git config --global commit.gpgsign true
 git config --global user.signingkey KEY
 ```
 
