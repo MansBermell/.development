@@ -16,7 +16,7 @@ Generate a key and upload to GitHub:
 ```sh
 brew install gpg2 gnupg
 
-gpg --full-generate-key
+gpg --full-generate-key # RSA, at least 4096 bits long
 gpg --list-secret-keys
 gpg --armor --export KEY
 ```
