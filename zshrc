@@ -35,13 +35,18 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search
-bindkey "^[[B" down-line-or-beginning-search
+if is darwin; then
+  bindkey '\e[A' up-line-or-beginning-search
+  bindkey '\e[B' down-line-or-beginning-search
+else
+  bindkey '^[OA' up-line-or-beginning-search
+  bindkey '^[OB' down-line-or-beginning-search
+fi
 
-bindkey "[C" forward-word
-bindkey "[D" backward-word
-bindkey "^[a" beginning-of-line
-bindkey "^[e" end-of-line
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+bindkey '^[a' beginning-of-line
+bindkey '^[e' end-of-line
 
 zstyle :completion::complete:-command-:: tag-order local-directories -
 
