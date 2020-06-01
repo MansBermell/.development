@@ -50,6 +50,9 @@ bindkey '^[e' end-of-line
 
 zstyle :completion::complete:-command-:: tag-order local-directories -
 
+autoload -U compinit
+compinit
+
 if has tmux; then
   alias t='tmux attach || tmux new'
 fi
