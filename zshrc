@@ -1,13 +1,13 @@
-function is {
-  if [[ "$(echo $(uname) | tr '[:upper:]' '[:lower:]')" == "${1}" ]]; then
+function has {
+  if type "${1}" > /dev/null; then
     return 0
   else
     return 1
   fi
 }
 
-function has {
-  if type "${1}" > /dev/null; then
+function is {
+  if [[ "$(echo $(uname) | tr '[:upper:]' '[:lower:]')" == "${1}" ]]; then
     return 0
   else
     return 1
