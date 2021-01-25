@@ -21,6 +21,22 @@ gpg --list-secret-keys
 gpg --armor --export KEY
 ```
 
+If the first `gpg` command hangs, use the following instead:
+
+```
+cat >key.conf <<EOF
+Key-Type: RSA
+Key-Length: 4096
+Subkey-Type: RSA
+Subkey-Length: 4096
+Name-Real: Ivan Ukhov
+Name-Email: ivan.ukhov@gmail.com
+Expire-Date: 0
+%commit
+EOF
+gpg --batch --generate-key key.conf
+```
+
 Configure Git:
 
 ```sh
