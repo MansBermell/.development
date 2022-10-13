@@ -1,6 +1,6 @@
 [core]
-	attributesfile = ~/.development/gitattributes
-	excludesfile = ~/.development/gitignore
+	attributesFile = ~/.development/gitattributes
+	excludesFile = ~/.development/gitignore
 
 [user]
 	name = Ivan Ukhov
@@ -13,6 +13,7 @@
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [filter "ipynb"]
 	clean = ~/.development/bin/filter_ipynb.py
