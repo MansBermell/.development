@@ -51,9 +51,3 @@ gpg --list-keys --keyid-format LONG
 git config --global commit.gpgsign true
 git config --global user.signingkey KEY
 ```
-
-### Jupyter: Cleaning notebooks
-
-```sh
-echo '*.ipynb filter=ipynb' >> ~/.development/gitattributes
-```

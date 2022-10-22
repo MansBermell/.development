@@ -11,10 +11,15 @@
 	changed = cyan
 	untracked = yellow
 
+[init]
+	defaultBranch = main
+
+[commit]
+	gpgsign = true
+
 [push]
 	default = simple
 	autoSetupRemote = true
 
-[filter "ipynb"]
-	clean = ~/.development/bin/filter_ipynb.py
-	smudge = cat
+[pull]
+	ff = only
