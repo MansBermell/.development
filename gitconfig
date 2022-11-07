@@ -15,7 +15,7 @@
 	defaultBranch = main
 
 [commit]
-	gpgsign = true
+	gpgSign = true
 
 [push]
 	default = simple
