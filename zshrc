@@ -124,10 +124,6 @@ if has rustup; then
   alias rsu='rustup update nightly'
 fi
 
-if has yapf; then
-  alias pyf='yapf --style=google --in-place --recursive'
-fi
-
 # ------------------------------------------------------------------------------
 # Other
 # ------------------------------------------------------------------------------
