@@ -108,8 +108,9 @@ if has cargo; then
   alias c=cargo
   alias cob='cargo bench'
   alias cod='cargo doc --open'
+  alias cof='cargo fmt'
+  alias col='cargo clippy'
   alias cot='cargo test --jobs 1'
-  alias cou='cargo update'
 fi
 
 if has docker; then
@@ -118,10 +119,6 @@ fi
 
 if has make; then
   alias m=make
-fi
-
-if has rustup; then
-  alias rsu='rustup update nightly'
 fi
 
 # ------------------------------------------------------------------------------
