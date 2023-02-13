@@ -106,11 +106,11 @@ fi
 
 if has cargo; then
   alias c=cargo
-  alias cob='cargo bench'
-  alias cod='cargo doc --open'
+  alias cob='cargo bench --all-features'
+  alias cod='cargo doc --all-features --open'
   alias cof='cargo fmt'
   alias col='cargo clippy'
-  alias cot='cargo test --jobs 1'
+  alias cot='cargo test --all-features --jobs 1'
 fi
 
 if has docker; then
