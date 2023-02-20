@@ -100,6 +100,14 @@ if has git; then
   alias gs='git status'
 fi
 
+if has git && has grepdiff; then
+  function gape {
+    git diff -U0 \
+      | grepdiff -E $1 --output-matching=hunk \
+      | git apply --cached --unidiff-zero
+  }
+fi
+
 # ------------------------------------------------------------------------------
 # Programming
 # ------------------------------------------------------------------------------
