@@ -54,7 +54,7 @@ autoload -U compinit
 compinit
 
 if has tmux; then
-  alias t='tmux attach || tmux new'
+  alias x='tmux attach || tmux new'
 fi
 
 # ------------------------------------------------------------------------------
@@ -127,6 +127,10 @@ fi
 
 if has make; then
   alias m=make
+fi
+
+if has terraform; then
+  alias t=terraform
 fi
 
 # ------------------------------------------------------------------------------
