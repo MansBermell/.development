@@ -123,6 +123,14 @@ fi
 
 if has docker; then
   alias d=docker
+  function run {
+    docker run \
+      --rm \
+      --user "$(id -u):$(id -g)" \
+      --volume "${PWD}:/workspace" \
+      --workdir /workspace \
+      "$@"
+  }
 fi
 
 if has make; then
