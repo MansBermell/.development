@@ -102,7 +102,7 @@ fi
 
 if has git && has grepdiff; then
   function gape {
-    git diff -U0 \
+    git diff -U0 $2 \
       | grepdiff -E $1 --output-matching=hunk \
       | git apply --cached --unidiff-zero
   }
