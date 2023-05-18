@@ -117,7 +117,7 @@ if has cargo; then
   alias cob='cargo bench --all-features'
   alias cod='cargo doc --all-features --open'
   alias cof='cargo fmt'
-  alias col='cargo clippy'
+  alias col='cargo clippy --all-features'
   alias cot='cargo test --all-features --jobs 1'
 fi
 
