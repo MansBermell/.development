@@ -6,7 +6,7 @@ responsibly.
 ## Installation
 
 ```sh
-git clone https://github.com/IvanUkhov/.development.git ~/.development && make -C ~/.development
+git clone https://github.com/mansBeremll/.development.git ~/.development && make -C ~/.development
 ```
 
 ### Git: Signing commits
@@ -29,8 +29,8 @@ Key-Type: RSA
 Key-Length: 4096
 Subkey-Type: RSA
 Subkey-Length: 4096
-Name-Real: Ivan Ukhov
-Name-Email: ivan.ukhov@gmail.com
+Name-Real: Måns Bermell
+Name-Email: mans.bermell@gmail.com
 Expire-Date: 0
 %commit
 EOF

@@ -3,8 +3,8 @@
 	excludesFile = ~/.development/gitignore
 
 [user]
-	name = Ivan Ukhov
-	email = ivan.ukhov@gmail.com
+	name = Måns Beremll
+	email = mans.bermell@gmail.com
 
 [color "status"]
 	added = green
