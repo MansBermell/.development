@@ -21,7 +21,7 @@ function is {
 TERM=xterm-256color
 
 setopt prompt_subst
-PROMPT='%{%F{green}%}%n%{%F{yellow}%}@%{%F{cyan}%}%m %{%F{blue}%}%c$(git_prompt) $%{%F{none}%} '
+PROMPT='%{%F{green}%}%n%{%F{yellow}%}@%{%F{cyan}%}%m %{%F{blue}%}%c%{%F{green}%}$(git_prompt) %{%F{blue}%}$%{%F{none}%} '
 
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
